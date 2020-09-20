@@ -10,7 +10,8 @@ struct Node
 
 void sortedInsert(struct Node** head_ref, int num){
 	struct Node* current;
-	struct Node* new_node = new Node;
+	/*struct Node* new_node = new Node;*/
+	struct Node* new_node = (struct Node*) malloc (sizeof(struct Node));
 	new_node->data = num;
 	if (*head_ref == NULL || (*head_ref)->data > num){
 		new_node->next = *head_ref;
@@ -45,7 +46,8 @@ void deleteNode(struct Node **head_ref, int key){
 }
 
 void push(struct Node** head_ref, int num){
-	struct Node* new_node = new Node;
+	/*struct Node* new_node = new Node;*/
+	struct Node* new_node = (struct Node*) malloc (sizeof(struct Node));
 	new_node->data = num;
 	new_node->next = (*head_ref);
 	(*head_ref) = new_node;
